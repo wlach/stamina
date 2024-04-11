@@ -53,7 +53,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-          cache: pip
       - uses: hynek/setup-cached-uv@v1
         with:
           cache-suffix: -tests
@@ -84,7 +83,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          cache: pip
           python-version-file: .python-version-default
       - uses: hynek/setup-cached-uv@v1
         with:
@@ -135,7 +133,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-          cache: pip
       - uses: hynek/setup-cached-uv@v1
         with:
           cache-suffix: -mypy-api
@@ -169,7 +166,6 @@ jobs:
       - run: tar xf dist/*.tar.gz --strip-components=1
       - uses: actions/setup-python@v5
         with:
-          cache: pip
           python-version-file: .python-version-default
       - uses: hynek/setup-cached-uv@v1
         with:
@@ -196,7 +192,6 @@ jobs:
         with:
           # Keep in sync with .readthedocs.yaml
           python-version: "3.12"
-          cache: pip
       - uses: hynek/setup-cached-uv@v1
         with:
           cache-suffix: -mypy-docs
@@ -218,7 +213,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          cache: pip
           python-version-file: .python-version-default
       - uses: hynek/setup-cached-uv@v1
         with:
